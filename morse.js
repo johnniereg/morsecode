@@ -46,6 +46,7 @@ function convertToMorse(string) {
   // Converts to lower case and puts each character into an array.
   let brokenUpLetters = string.replace(/[^0-9a-z\s]/gi, '').toLowerCase().split("");
 
+  // Takes the input and makes it filename friendly.
   let fileName = string.replace(/[^0-9a-z]/gi, '').toLowerCase();
   console.log(fileName);
 

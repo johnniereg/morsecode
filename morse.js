@@ -1,5 +1,4 @@
-
-
+const fs = require('fs');
 
 const morseCode = {
   'a': '.-',
@@ -53,8 +52,14 @@ function convertToMorse(string) {
     morseArray.push(morseCode[character]);
   });
 
-  return morseArray.join(" ");
+  let morseCodeTranslation = morseArray.join(" ");
 
+  fs.writeFile("results/morsecode.txt", morseCodeTranslation, function (err) {
+    if (err) throw err;
+    console.log("Your code has been saved.");
+  } );
 }
 
-console.log(convertToMorse("Hello $```__World"));
+
+
+convertToMorse("Hello $```__World");

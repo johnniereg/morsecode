@@ -43,8 +43,7 @@ const morseCode = {
 
 function convertToMorse(string) {
 
-  let noBadChars = string.replace(/[^0-9a-z\s]/gi, '');
-  let brokenUpLetters = noBadChars.toLowerCase().split("");
+  let brokenUpLetters = string.replace(/[^0-9a-z\s]/gi, '').toLowerCase().split("");
 
   let morseArray = [];
 
@@ -60,6 +59,13 @@ function convertToMorse(string) {
   } );
 }
 
+let userInput = process.argv;
 
+if (userInput.length <= 2) {
+  console.log(`Please provide an input to convert: <node morse.js "Convert this">`);
+} else if (userInput.length >= 4) {
+  console.log(`Put your whole input in a set of quotes: <node morse.js "Convert this">`);
+} else {
+  convertToMorse(userInput[2]);
+}
 
-convertToMorse("Hello $```__World");

@@ -1,10 +1,8 @@
 # Morse Code Program
 
-A Node.js command line program that takes a word or phrase and converts it to morse code.
+A Node.js command line program that takes a word or phrase and converts it to morse code. Only alpha-numeric characters and spaces are included in the conversion.
 
-The resulting translation is saved in a .txt file in a "/results" folder.
-
-The file names are the inputted string.
+The resulting translation is saved in a .txt file in a "/results" folder. The file names are the inputted string.
 
 ## Dependencies
 
